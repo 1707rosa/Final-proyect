@@ -1,0 +1,8 @@
+C:\Users\Administrador\Desktop\Programacion I\GoalsApp\obj\Debug\net6.0\GoalsApp.csproj.AssemblyReference.cache
+C:\Users\Administrador\Desktop\Programacion I\GoalsApp\obj\Debug\net6.0\GoalsApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrador\Desktop\Programacion I\GoalsApp\obj\Debug\net6.0\GoalsApp.AssemblyInfoInputs.cache
+C:\Users\Administrador\Desktop\Programacion I\GoalsApp\obj\Debug\net6.0\GoalsApp.AssemblyInfo.cs
+C:\Users\Administrador\Desktop\Programacion I\GoalsApp\obj\Debug\net6.0\GoalsApp.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\Programacion I\GoalsApp\obj\Debug\net6.0\GoalsApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Administrador\Desktop\Programacion I\GoalsApp\obj\Debug\net6.0\GoalsApp.RazorAssemblyInfo.cache
+C:\Users\Administrador\Desktop\Programacion I\GoalsApp\obj\Debug\net6.0\GoalsApp.RazorAssemblyInfo.cs
