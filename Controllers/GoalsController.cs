@@ -22,24 +22,6 @@ namespace GoalTrackingApp.Controllers
             return View(await _context.Goals.ToListAsync());
         }
 
-        // GET: Goals/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var goal = await _context.Goals
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (goal == null)
-            {
-                return NotFound();
-            }
-
-            return View(goal);
-        }
-
         // GET: Goals/Create
         public IActionResult Create()
         {
@@ -49,7 +31,7 @@ namespace GoalTrackingApp.Controllers
         // POST: Goals/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,DueDate,IsCompleted")] Goal goal)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,Date,Status")] Goal goal)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +61,7 @@ namespace GoalTrackingApp.Controllers
         // POST: Goals/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,DueDate,IsCompleted")] Goal goal)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Date,Status")] Goal goal)
         {
             if (id != goal.Id)
             {
@@ -138,9 +120,9 @@ namespace GoalTrackingApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Acción para cambiar el estado de IsCompleted
+        // POST: Goals/UpdateStatus/5
         [HttpPost]
-        public async Task<IActionResult> ToggleCompletion(int id)
+        public async Task<IActionResult> UpdateStatus(int id, GoalStatus status)
         {
             var goal = await _context.Goals.FindAsync(id);
             if (goal == null)
@@ -148,7 +130,7 @@ namespace GoalTrackingApp.Controllers
                 return NotFound();
             }
 
-            goal.IsCompleted = !goal.IsCompleted;
+            goal.Status = status;
             _context.Update(goal);
             await _context.SaveChangesAsync();
 

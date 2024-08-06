@@ -134,3 +134,4 @@ C:\Users\Administrador\Desktop\Programacion I\GoalsApp\obj\Debug\net8.0\refint\G
 C:\Users\Administrador\Desktop\Programacion I\GoalsApp\obj\Debug\net8.0\GoalsApp.pdb
 C:\Users\Administrador\Desktop\Programacion I\GoalsApp\obj\Debug\net8.0\GoalsApp.genruntimeconfig.cache
 C:\Users\Administrador\Desktop\Programacion I\GoalsApp\obj\Debug\net8.0\ref\GoalsApp.dll
+C:\Users\Administrador\Desktop\Programacion I\GoalsApp\obj\Debug\net8.0\GoalsApp.sourcelink.json

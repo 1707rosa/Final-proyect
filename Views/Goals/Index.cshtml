@@ -1,11 +1,13 @@
 @model IEnumerable<GoalTrackingApp.Models.Goal>
-
 @{
-    ViewData["Title"] = "Goal management";
+    ViewData["Title"] = "Goals";
 }
 
-<h1>Goals management</h1>
+<h1>Goals</h1>
 
+<p>
+    <a asp-action="Create">Add Goal</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -16,10 +18,10 @@
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DueDate)
+                @Html.DisplayNameFor(model => model.Date)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsCompleted)
+                @Html.DisplayNameFor(model => model.Status)
             </th>
             <th></th>
         </tr>
@@ -34,12 +36,18 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DueDate)
+                @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                <form asp-action="ToggleCompletion" asp-route-id="@item.Id">
-                    <input type="checkbox" @(item.IsCompleted ? "checked" : "") onchange="this.form.submit()" />
+               <form asp-action="UpdateStatus" method="post" style="display: inline;">
+                <input type="hidden" name="id" value="@item.Id" />
+                <select name="status" onchange="this.form.submit()">
+                    <!option value="Iniciada" @(item.Status == GoalTrackingApp.Models.GoalStatus.Iniciada ? "selected" : "")>Iniciada</!option>
+                    <!option value="EnProceso" @(item.Status == GoalTrackingApp.Models.GoalStatus.EnProceso ? "selected" : "")>En Proceso</!option>
+                    <!option value="Completada" @(item.Status == GoalTrackingApp.Models.GoalStatus.Completada ? "selected" : "")>Completada</!option>
+                </select>
                 </form>
+
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
@@ -49,7 +57,3 @@
 }
     </tbody>
 </table>
-
-<p>
-    <a asp-action="Create">Add Goal</a>
-</p>

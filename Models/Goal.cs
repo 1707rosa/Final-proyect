@@ -8,18 +8,21 @@ namespace GoalTrackingApp.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(100)]
-        public string Title { get; set; } = string.Empty;
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime Date { get; set; }
 
         [Required]
-        [StringLength(500)]
-        public string Description { get; set; } = string.Empty;
+        public GoalStatus Status { get; set; }
+    }
 
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
-
-        [Required]
-        public DateTime DueDate { get; set; }
-
-        public bool IsCompleted { get; set; }
+    public enum GoalStatus
+    {
+        Iniciada,
+        EnProceso,
+        Completada
     }
 }
